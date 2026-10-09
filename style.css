@@ -69,6 +69,10 @@ h6 {
   text-wrap: balance;
 }
 
+h1 {
+  font-size: 400%;
+}
+
 main {
   display: grid;
   gap: 1.25rem;
@@ -91,13 +95,17 @@ figcaption {
 
 form {
   display: grid;
+  grid-template-columns: auto 1fr;
   gap: 1rem;
   max-width: 40rem;
 }
 
 label {
   display: grid;
-  gap: 0.35rem;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+  align-items: center;
+  gap: 1rem;
   font-weight: 600;
 }
 
@@ -123,6 +131,7 @@ textarea {
 }
 
 button {
+  grid-column: 1 / -1;
   border: 0;
   border-radius: 0.5rem;
   background: var(--color-accent);
@@ -140,7 +149,10 @@ button {
 
 .projects article {
   display: grid;
-  gap: 0.75rem;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  gap: 1rem;
+  margin: 0;
   padding: 1rem;
   background: var(--color-surface);
   border: 1px solid #e0ddd9;
@@ -202,4 +214,3 @@ section h2 {
     flex-basis: auto;
   }
 }
-
