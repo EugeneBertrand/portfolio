@@ -6,174 +6,176 @@
   <title>Resume — Eugene Bertrand</title>
   <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body class="resume-page">
   <nav>
     <a href="../index.html">Home</a>
     <a href="../projects/index.html">Projects</a>
-    <a href="index.html">Resume</a>
+    <a class="current" href="index.html">Resume</a>
     <a href="../contact/index.html">Contact</a>
     <a href="https://github.com/EugeneBertrand" target="_blank">GitHub</a>
   </nav>
 
-  <header>
-    <h1>Eugene Bertrand</h1>
-    <p>
-      <a href="mailto:eugenebertrand65@gmail.com">eugenebertrand65@gmail.com</a>
-      ·
-      <a href="tel:+19168246974">(916) 824-6974</a>
-      ·
-      <a href="https://www.linkedin.com/in/eugene-bertrand" target="_blank">LinkedIn</a>
-      ·
-      <a href="https://github.com/EugeneBertrand" target="_blank">GitHub</a>
-    </p>
-  </header>
+  <main class="resume">
+    <header>
+      <h1>Eugene Bertrand</h1>
+      <p>
+        <a href="mailto:eugenebertrand65@gmail.com">eugenebertrand65@gmail.com</a>
+        ·
+        <a href="tel:+19168246974">(916) 824-6974</a>
+        ·
+        <a href="https://www.linkedin.com/in/eugene-bertrand" target="_blank">LinkedIn</a>
+        ·
+        <a href="https://github.com/EugeneBertrand" target="_blank">GitHub</a>
+      </p>
+    </header>
 
-  <section>
-    <h2>Education</h2>
-    <article>
-      <header>
-        <h3>University of California San Diego</h3>
-        <p>Bachelor of Science in Data Science — La Jolla, CA</p>
-        <p>Expected graduation: <time datetime="2027-06">June 2027</time></p>
-      </header>
-      <p>Relevant Coursework: Computer Architecture, Computer Systems, Data Structures and Algorithms</p>
-    </article>
-  </section>
+    <section>
+      <h2>Education</h2>
+      <article>
+        <header>
+          <h3>University of California San Diego</h3>
+          <p>Bachelor of Science in Data Science — La Jolla, CA</p>
+          <p>Expected graduation: <time datetime="2027-06">June 2027</time></p>
+        </header>
+        <p>Relevant Coursework: Computer Architecture, Computer Systems, Data Structures and Algorithms</p>
+      </article>
+    </section>
 
-  <section>
-    <h2>Technical Skills</h2>
-    <ul>
-      <li><strong>Languages:</strong> Python, Javascript, Go, SQL, R, Java, Rust, CSS, HTML, TypeScript, C, C++</li>
-      <li><strong>Technologies and Frameworks:</strong> AWS, Supabase, ReactJS, NodeJS, ExpressJS, Firebase, Firestore, Git, Linux, MongoDB, Streamlit, FastAPI, XCode, Swift, REST API, TensorFlow, Microsoft Office, SQLite, Docker, Kubernetes, Apache Spark, Databricks</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Experience</h2>
-
-    <article>
-      <header>
-        <h3>Rhombus — Software Engineering Intern</h3>
-        <p>
-          Sacramento, CA
-          ·
-          <time datetime="2026-06">June 2026</time>
-          –
-          <time datetime="2026-08">August 2026</time>
-        </p>
-      </header>
+    <section>
+      <h2>Technical Skills</h2>
       <ul>
-        <li>Engineered a distributed device fleet observability platform with a Go backend that replaced a traditional cloud telemetry pipeline with an edge architecture, using embedded SQLite databases on each device for local-first telemetry persistence, projected to eliminate $500K/month in AWS ingest, storage, and query costs</li>
-        <li>Built a high-throughput Go server exposing HTTP and streaming APIs that fans a single query across 10,000+ devices and concurrently streams NDJSON results directly from on-device SQLite stores</li>
-        <li>Developed a native SwiftUI macOS dashboard for real-time fleet monitoring featuring live query execution, fleet health summaries, per-device drill-downs, and crash analytics</li>
+        <li><strong>Languages:</strong> Python, Javascript, Go, SQL, R, Java, Rust, CSS, HTML, TypeScript, C, C++</li>
+        <li><strong>Technologies and Frameworks:</strong> AWS, Supabase, ReactJS, NodeJS, ExpressJS, Firebase, Firestore, Git, Linux, MongoDB, Streamlit, FastAPI, XCode, Swift, REST API, TensorFlow, Microsoft Office, SQLite, Docker, Kubernetes, Apache Spark, Databricks</li>
       </ul>
-    </article>
+    </section>
 
-    <article>
-      <header>
-        <h3>DS3 — Software Developer</h3>
-        <p>
-          La Jolla, CA
-          ·
-          <time datetime="2025-10">October 2025</time>
-          –
-          <time datetime="2026-06">June 2026</time>
-        </p>
-      </header>
-      <ul>
-        <li>Architected a scalable, serverless customer support platform on AWS Terraform to automate ticket management and prioritization based on Python based real-time sentiment analysis, reducing ticket response time by 60%</li>
-        <li>Engineered the backend using AWS Lambda and API Gateway to process tickets with NoSQL for scalable data storage</li>
-        <li>Deployed a secure React frontend to AWS S3, managing customer and admin roles through AWS Cognito and IAM policies</li>
-        <li>Implemented automated admin alerts for high-priority tickets using AWS SES and EventBridge for notifications</li>
-      </ul>
-    </article>
+    <section>
+      <h2>Experience</h2>
 
-    <article>
-      <header>
-        <h3>Campus Collect — Software Engineering Intern</h3>
-        <p>
-          Arlington, VA
-          ·
-          <time datetime="2025-06">June 2025</time>
-          –
-          <time datetime="2025-09">September 2025</time>
-        </p>
-      </header>
-      <ul>
-        <li>Improved recommendation system accuracy through algorithm development by 35% using TensorFlow.js and Firebase Functions; boosted click-through rates by 25% with real-time React.js components and XCode</li>
-        <li>Secured user data with Firebase Auth and custom Firestore rules achieving 100% compliance; reduced response time by 40% through Firebase Functions and caching</li>
-        <li>Managed 5,000+ Firestore records with indexing and schema validation; implemented CI/CD pipelines with GitHub Actions reducing release cycle time by 30%</li>
-      </ul>
-    </article>
+      <article>
+        <header>
+          <h3>Rhombus — Software Engineering Intern</h3>
+          <p>
+            Sacramento, CA
+            ·
+            <time datetime="2026-06">June 2026</time>
+            –
+            <time datetime="2026-08">August 2026</time>
+          </p>
+        </header>
+        <ul>
+          <li>Engineered a distributed device fleet observability platform with a Go backend that replaced a traditional cloud telemetry pipeline with an edge architecture, using embedded SQLite databases on each device for local-first telemetry persistence, projected to eliminate $500K/month in AWS ingest, storage, and query costs</li>
+          <li>Built a high-throughput Go server exposing HTTP and streaming APIs that fans a single query across 10,000+ devices and concurrently streams NDJSON results directly from on-device SQLite stores</li>
+          <li>Developed a native SwiftUI macOS dashboard for real-time fleet monitoring featuring live query execution, fleet health summaries, per-device drill-downs, and crash analytics</li>
+        </ul>
+      </article>
 
-    <article>
-      <header>
-        <h3>Artificial Intelligence Explainability Accountability Research Lab — AI/ML Researcher</h3>
-        <p>
-          Santa Cruz, CA
-          ·
-          <time datetime="2024-10">October 2024</time>
-          –
-          <time datetime="2025-03">March 2025</time>
-        </p>
-      </header>
-      <ul>
-        <li>Evaluated AI models to identify 15–20% accuracy gaps across benchmarks and built a 98%-accurate backward-chaining FOL system using SWI-Prolog and LLMs (ChatGPT)</li>
-        <li>Deployed experimental model services using Kubernetes and Docker for reproducible, scalable testing environments; created educational materials through Agile research cycles</li>
-      </ul>
-    </article>
-  </section>
+      <article>
+        <header>
+          <h3>DS3 — Software Developer</h3>
+          <p>
+            La Jolla, CA
+            ·
+            <time datetime="2025-10">October 2025</time>
+            –
+            <time datetime="2026-06">June 2026</time>
+          </p>
+        </header>
+        <ul>
+          <li>Architected a scalable, serverless customer support platform on AWS Terraform to automate ticket management and prioritization based on Python based real-time sentiment analysis, reducing ticket response time by 60%</li>
+          <li>Engineered the backend using AWS Lambda and API Gateway to process tickets with NoSQL for scalable data storage</li>
+          <li>Deployed a secure React frontend to AWS S3, managing customer and admin roles through AWS Cognito and IAM policies</li>
+          <li>Implemented automated admin alerts for high-priority tickets using AWS SES and EventBridge for notifications</li>
+        </ul>
+      </article>
 
-  <section>
-    <h2>Projects</h2>
+      <article>
+        <header>
+          <h3>Campus Collect — Software Engineering Intern</h3>
+          <p>
+            Arlington, VA
+            ·
+            <time datetime="2025-06">June 2025</time>
+            –
+            <time datetime="2025-09">September 2025</time>
+          </p>
+        </header>
+        <ul>
+          <li>Improved recommendation system accuracy through algorithm development by 35% using TensorFlow.js and Firebase Functions; boosted click-through rates by 25% with real-time React.js components and XCode</li>
+          <li>Secured user data with Firebase Auth and custom Firestore rules achieving 100% compliance; reduced response time by 40% through Firebase Functions and caching</li>
+          <li>Managed 5,000+ Firestore records with indexing and schema validation; implemented CI/CD pipelines with GitHub Actions reducing release cycle time by 30%</li>
+        </ul>
+      </article>
 
-    <article>
-      <header>
-        <h3>FlipLy AI</h3>
-        <p>
-          JavaScript (React, TypeScript, Recharts, Tailwind CSS), Supabase (Edge Functions), Databricks (Apache Spark)
-          ·
-          <time datetime="2025">2025</time>
-        </p>
-      </header>
-      <ul>
-        <li>Engineered full-stack flashcard learning platform with Supabase backend and Databricks analytics pipeline; integrated Apache Spark for processing study session data across distributed clusters</li>
-        <li>Developed serverless Edge Functions with Deno for PDF-to-flashcard generation and real-time data synchronization; implemented JWT authentication and RLS policies for secure multi-user access</li>
-        <li>Designed RESTful APIs for Databricks job orchestration and automated data pipeline triggering</li>
-      </ul>
-    </article>
+      <article>
+        <header>
+          <h3>Artificial Intelligence Explainability Accountability Research Lab — AI/ML Researcher</h3>
+          <p>
+            Santa Cruz, CA
+            ·
+            <time datetime="2024-10">October 2024</time>
+            –
+            <time datetime="2025-03">March 2025</time>
+          </p>
+        </header>
+        <ul>
+          <li>Evaluated AI models to identify 15–20% accuracy gaps across benchmarks and built a 98%-accurate backward-chaining FOL system using SWI-Prolog and LLMs (ChatGPT)</li>
+          <li>Deployed experimental model services using Kubernetes and Docker for reproducible, scalable testing environments; created educational materials through Agile research cycles</li>
+        </ul>
+      </article>
+    </section>
 
-    <article>
-      <header>
-        <h3>PlayPredict</h3>
-        <p>
-          Python (Pandas, NumPy, scikit-learn), JavaScript (NodeJS, ReactJS, ExpressJS)
-          ·
-          <time datetime="2025">2025</time>
-        </p>
-      </header>
-      <ul>
-        <li>Developed end-to-end NFL player prediction platform; built TypeScript/ExpressJS REST API ingesting 400K rows with under 100ms response time</li>
-        <li>Trained position-specific RandomForest regressors (QB, RB, WR, TE) in Python; automated model serialization with Joblib and NodeJS backend integration</li>
-        <li>Designed responsive ReactJS frontend with real-time analytics; added CSV utilities for data cleaning and automated model retraining pipeline</li>
-      </ul>
-    </article>
+    <section>
+      <h2>Projects</h2>
 
-    <article>
-      <header>
-        <h3>HealthMiner</h3>
-        <p>
-          Python (Streamlit, FastAPI, PyMongo, PyPDF2, Sentence-Transformers, Groq API, NumPy, Pandas)
-          ·
-          <time datetime="2024">2024</time>
-        </p>
-      </header>
-      <ul>
-        <li>Developed RAG system processing clinical trial documents with 95% accuracy; reduced manual review time by 80% through automated analysis</li>
-        <li>Built Streamlit dashboard with real-time chat interface and PyPDF2 document management; engineered custom NLP models achieving 92% F1-score</li>
-        <li>Integrated Groq API for real-time analysis; implemented MongoDB with PyMongo and semantic search using cosine similarity for natural language queries</li>
-      </ul>
-    </article>
-  </section>
+      <article>
+        <header>
+          <h3>FlipLy AI</h3>
+          <p>
+            JavaScript (React, TypeScript, Recharts, Tailwind CSS), Supabase (Edge Functions), Databricks (Apache Spark)
+            ·
+            <time datetime="2025">2025</time>
+          </p>
+        </header>
+        <ul>
+          <li>Engineered full-stack flashcard learning platform with Supabase backend and Databricks analytics pipeline; integrated Apache Spark for processing study session data across distributed clusters</li>
+          <li>Developed serverless Edge Functions with Deno for PDF-to-flashcard generation and real-time data synchronization; implemented JWT authentication and RLS policies for secure multi-user access</li>
+          <li>Designed RESTful APIs for Databricks job orchestration and automated data pipeline triggering</li>
+        </ul>
+      </article>
+
+      <article>
+        <header>
+          <h3>PlayPredict</h3>
+          <p>
+            Python (Pandas, NumPy, scikit-learn), JavaScript (NodeJS, ReactJS, ExpressJS)
+            ·
+            <time datetime="2025">2025</time>
+          </p>
+        </header>
+        <ul>
+          <li>Developed end-to-end NFL player prediction platform; built TypeScript/ExpressJS REST API ingesting 400K rows with under 100ms response time</li>
+          <li>Trained position-specific RandomForest regressors (QB, RB, WR, TE) in Python; automated model serialization with Joblib and NodeJS backend integration</li>
+          <li>Designed responsive ReactJS frontend with real-time analytics; added CSV utilities for data cleaning and automated model retraining pipeline</li>
+        </ul>
+      </article>
+
+      <article>
+        <header>
+          <h3>HealthMiner</h3>
+          <p>
+            Python (Streamlit, FastAPI, PyMongo, PyPDF2, Sentence-Transformers, Groq API, NumPy, Pandas)
+            ·
+            <time datetime="2024">2024</time>
+          </p>
+        </header>
+        <ul>
+          <li>Developed RAG system processing clinical trial documents with 95% accuracy; reduced manual review time by 80% through automated analysis</li>
+          <li>Built Streamlit dashboard with real-time chat interface and PyPDF2 document management; engineered custom NLP models achieving 92% F1-score</li>
+          <li>Integrated Groq API for real-time analysis; implemented MongoDB with PyMongo and semantic search using cosine similarity for natural language queries</li>
+        </ul>
+      </article>
+    </section>
+  </main>
 </body>
 </html>
