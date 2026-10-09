@@ -1,5 +1,5 @@
 :root {
-  --color-accent: oklch(65% 50% 0);
+  --color-accent: #e57a1f;
   --color-border: oklch(80% 3% 200);
   --color-surface: #ffffff;
   --color-background: #f7f4f1;
