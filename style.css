@@ -1,9 +1,6 @@
 :root {
   --color-accent: #e57a1f;
-  --color-border: oklch(80% 3% 200);
-  --color-surface: #ffffff;
-  --color-background: #f7f4f1;
-  --color-text: #1d1d1d;
+  --color-border: oklch(50% 10% 200 / 40%);
 }
 
 * {
@@ -11,15 +8,16 @@
 }
 
 html {
+  color-scheme: light dark;
   accent-color: var(--color-accent);
 }
 
 body {
   margin: 0 auto;
   max-width: 100ch;
-  padding: 1rem clamp(1rem, 3vw, 2rem) 3rem;
-  background: var(--color-background);
-  color: var(--color-text);
+  padding: 4rem clamp(1rem, 3vw, 2rem) 3rem;
+  background: Canvas;
+  color: CanvasText;
   font: 100%/1.5 system-ui, sans-serif;
 }
 
@@ -34,11 +32,13 @@ a {
 }
 
 nav {
+  --border-color: var(--color-border);
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem;
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid var(--color-border);
+  padding-right: 8rem;
+  border-bottom: 1px solid var(--border-color);
 }
 
 nav a {
@@ -55,7 +55,7 @@ nav a:focus-visible {
 }
 
 nav a.current {
-  border-bottom-color: var(--color-border);
+  border-bottom-color: var(--border-color);
   padding-bottom: calc(0.6em - 0.4em);
 }
 
@@ -81,15 +81,15 @@ main {
 figure {
   margin: 0;
   padding: 1rem;
-  background: var(--color-surface);
-  border: 1px solid #ddd6d0;
+  background: Canvas;
+  border: 1px solid var(--color-border);
   border-radius: 1rem;
   box-shadow: 0 6px 18px rgba(29, 29, 29, 0.06);
 }
 
 figcaption {
   margin-top: 0.75rem;
-  color: #4a4a4a;
+  color: color-mix(in srgb, CanvasText 70%, Canvas);
   font-size: 0.95rem;
 }
 
@@ -111,7 +111,8 @@ label {
 
 input,
 textarea,
-button {
+button,
+select {
   width: 100%;
   box-sizing: border-box;
   font: inherit;
@@ -122,7 +123,7 @@ textarea {
   padding: 0.75rem 0.8rem;
   border: 1px solid #d2d2d2;
   border-radius: 0.5rem;
-  background: var(--color-surface);
+  background: Canvas;
 }
 
 textarea {
@@ -140,6 +141,21 @@ button {
   cursor: pointer;
 }
 
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 80%;
+}
+
+.color-scheme select {
+  width: auto;
+  padding: 0.25rem 0.4rem;
+}
+
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
@@ -154,8 +170,8 @@ button {
   gap: 1rem;
   margin: 0;
   padding: 1rem;
-  background: var(--color-surface);
-  border: 1px solid #e0ddd9;
+  background: Canvas;
+  border: 1px solid var(--color-border);
   border-radius: 0.85rem;
   box-shadow: 0 2px 12px rgba(29, 29, 29, 0.04);
 }
@@ -169,12 +185,14 @@ button {
 
 .projects article h2 {
   margin: 0;
+  padding: 0;
+  border: 0;
   font-size: 1.2rem;
 }
 
 .projects article p {
   margin: 0;
-  color: #4d515a;
+  color: color-mix(in srgb, CanvasText 70%, Canvas);
 }
 
 section {
@@ -194,7 +212,7 @@ section h2 {
 .resume header p,
 .resume article p,
 .resume li {
-  color: #3f434d;
+  color: color-mix(in srgb, CanvasText 75%, Canvas);
 }
 
 .resume ul {
@@ -212,5 +230,15 @@ section h2 {
 
   nav a {
     flex-basis: auto;
+  }
+
+  nav {
+    padding-right: 0;
+  }
+
+  .color-scheme {
+    position: static;
+    justify-content: flex-end;
+    margin-bottom: 0.75rem;
   }
 }

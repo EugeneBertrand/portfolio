@@ -5,31 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact</title>
   <link rel="stylesheet" href="../style.css">
+  <script type="module" src="../global.js"></script>
 </head>
 <body>
-  <nav>
-    <a href="../index.html">Home</a>
-    <a href="../projects/index.html">Projects</a>
-    <a href="../resume/index.html">Resume</a>
-    <a class="current" href="index.html">Contact</a>
-    <a href="https://github.com/EugeneBertrand" target="_blank">GitHub</a>
-  </nav>
-
   <main>
     <h1>Contact</h1>
 
-    <form action="mailto:eugenebertrand65@gmail.com" method="POST" enctype="text/plain">
-      <label>
-        Email
-        <input type="email" name="email">
-      </label>
+    <form action="mailto:eugenebertrand65@gmail.com">
       <label>
         Subject
-        <input name="subject">
+        <input name="subject" required>
       </label>
       <label>
         Message
-        <textarea name="body"></textarea>
+        <textarea name="body" required></textarea>
       </label>
       <button type="submit">Send</button>
     </form>
