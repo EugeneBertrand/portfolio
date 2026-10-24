@@ -84,3 +84,65 @@ form?.addEventListener('submit', (event) => {
 
   location.href = `${form.action}?${parameters.join('&')}`;
 });
+
+export async function fetchJSON(url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Request failed (${response.status} ${response.statusText})`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error(`Unable to load data from ${url}:`, error);
+    throw error;
+  }
+}
+
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+  if (!(containerElement instanceof Element)) {
+    throw new TypeError('A valid project container is required.');
+  }
+
+  const safeHeadingLevel = /^h[1-6]$/i.test(headingLevel)
+    ? headingLevel.toLowerCase()
+    : 'h2';
+  containerElement.replaceChildren();
+
+  if (!Array.isArray(projects) || projects.length === 0) {
+    const message = document.createElement('p');
+    message.textContent = 'No projects to display.';
+    containerElement.append(message);
+    return;
+  }
+
+  for (const project of projects) {
+    const article = document.createElement('article');
+    const heading = document.createElement(safeHeadingLevel);
+    heading.textContent = project.title || 'Untitled project';
+    article.append(heading);
+
+    if (project.image) {
+      const image = document.createElement('img');
+      image.src = new URL(project.image, new URL(BASE_PATH, location.origin));
+      image.alt = `${project.title || 'Project'} preview`;
+      image.loading = 'lazy';
+      article.append(image);
+    }
+
+    if (project.year) {
+      const year = document.createElement('p');
+      year.className = 'project-year';
+      year.textContent = String(project.year);
+      article.append(year);
+    }
+
+    const description = document.createElement('p');
+    description.textContent = project.description || 'No description provided.';
+    article.append(description);
+    containerElement.append(article);
+  }
+}
+
+export async function fetchGithubData(username) {
+  return fetchJSON(`https://api.github.com/users/${encodeURIComponent(username)}`);
+}

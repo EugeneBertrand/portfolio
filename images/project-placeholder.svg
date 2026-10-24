@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 338" role="img" aria-labelledby="title">
+  <title id="title">Project image placeholder</title>
+  <rect width="600" height="338" fill="#eeeeee" />
+  <path d="M0 270h600v68H0z" fill="#e1e1e1" />
+  <text x="300" y="180" fill="#333333" font-family="system-ui, sans-serif" font-size="24" text-anchor="middle">Project preview</text>
+</svg>
