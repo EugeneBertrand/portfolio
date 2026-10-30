@@ -129,16 +129,20 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
       article.append(image);
     }
 
+    const details = document.createElement('div');
+    details.className = 'project-details';
+
     if (project.year) {
       const year = document.createElement('p');
       year.className = 'project-year';
       year.textContent = String(project.year);
-      article.append(year);
+      details.append(year);
     }
 
     const description = document.createElement('p');
     description.textContent = project.description || 'No description provided.';
-    article.append(description);
+    details.append(description);
+    article.append(details);
     containerElement.append(article);
   }
 }

@@ -10,6 +10,23 @@
 <body>
   <main>
     <h1 class="projects-title">Projects</h1>
+
+    <div class="projects-visualization">
+      <svg id="projects-pie-plot" viewBox="-50 -50 100 100" aria-label="Projects by year"></svg>
+      <ul class="legend" aria-label="Project year legend"></ul>
+    </div>
+
+    <label class="search-wrapper" for="projects-search">
+      <span>Search projects</span>
+      <input
+        id="projects-search"
+        class="searchBar"
+        type="search"
+        aria-label="Search projects"
+        placeholder="Search projects…"
+      />
+    </label>
+
     <section class="projects" aria-label="Project list" aria-live="polite"></section>
   </main>
   <script type="module" src="projects.js"></script>
