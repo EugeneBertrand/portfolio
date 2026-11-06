@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meta analysis</title>
+  <link rel="stylesheet" href="../style.css">
+  <script type="module" src="../global.js"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Meta analysis</h1>
+      <p>A summary of the portfolio codebase: commit timing, code size, and selected work by language.</p>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <div id="stats" aria-live="polite"></div>
+    </section>
+
+    <section>
+      <h2>Commits by time of day</h2>
+      <div id="chart" aria-label="Scatter plot of commit time by date"></div>
+    </section>
+
+    <section>
+      <h2>Selected commits</h2>
+      <p id="selection-count">No commits selected</p>
+      <dl id="language-breakdown" class="stats"></dl>
+    </section>
+  </main>
+
+  <dl id="commit-tooltip" class="info tooltip" hidden>
+    <dt>Commit</dt>
+    <dd><a href="" id="commit-link" target="_blank" rel="noreferrer noopener"></a></dd>
+    <dt>Date</dt>
+    <dd id="commit-date"></dd>
+    <dt>Author</dt>
+    <dd id="commit-author"></dd>
+    <dt>Lines edited</dt>
+    <dd id="commit-lines"></dd>
+  </dl>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

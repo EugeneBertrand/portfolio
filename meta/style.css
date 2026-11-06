@@ -1,0 +1,114 @@
+#stats,
+#language-breakdown {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem 1.25rem;
+}
+
+#stats dt,
+#language-breakdown dt {
+  color: color-mix(in srgb, CanvasText 70%, Canvas);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+#stats dd,
+#language-breakdown dd {
+  margin: 0.2rem 0 0.9rem;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-weight: 700;
+}
+
+#chart {
+  width: 100%;
+  overflow: hidden;
+}
+
+#chart svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.axis text {
+  font-size: 12px;
+  fill: color-mix(in srgb, CanvasText 70%, Canvas);
+}
+
+.axis path,
+.axis line,
+.gridlines line {
+  stroke: color-mix(in srgb, CanvasText 30%, Canvas);
+}
+
+.gridlines line {
+  stroke-dasharray: 4 4;
+}
+
+circle {
+  transition: fill-opacity 200ms ease, transform 200ms ease;
+  transform-origin: center;
+  transform-box: fill-box;
+  cursor: pointer;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
+circle.selected {
+  fill: #ff6b6b;
+}
+
+.info {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 50;
+  background: rgba(21, 25, 36, 0.96);
+  color: #fff;
+  padding: 0.75rem 0.8rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  min-width: 220px;
+  pointer-events: none;
+}
+
+.info[hidden] {
+  display: none;
+}
+
+.info dt {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.info dd {
+  margin: 0.2rem 0 0.65rem;
+}
+
+.info a {
+  color: #dfe9ff;
+}
+
+#selection-count {
+  margin-top: 0;
+  color: color-mix(in srgb, CanvasText 70%, Canvas);
+}
+
+.selection {
+  fill-opacity: 0.12;
+  stroke: #111827;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8;
+  }
+}
