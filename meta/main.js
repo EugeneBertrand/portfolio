@@ -147,7 +147,8 @@ function renderScatterPlot(commitData) {
       .on('start brush end', brushed),
   );
 
-  svg.selectAll('.overlay').raise();
+  svg.selectAll('.dots').raise();
+  svg.selectAll('.dots, .overlay ~ *').raise();
 }
 
 function updateTooltipVisibility(isVisible) {
@@ -164,6 +165,7 @@ function updateTooltipPosition(event) {
 function renderTooltipContent(commit) {
   const link = document.getElementById('commit-link');
   const date = document.getElementById('commit-date');
+  const time = document.getElementById('commit-time');
   const author = document.getElementById('commit-author');
   const lines = document.getElementById('commit-lines');
 
@@ -172,6 +174,7 @@ function renderTooltipContent(commit) {
   link.href = commit.url;
   link.textContent = commit.id;
   date.textContent = commit.datetime?.toLocaleString('en', { dateStyle: 'full' });
+  time.textContent = commit.datetime?.toLocaleTimeString('en', { hour: 'numeric', minute: '2-digit' });
   author.textContent = commit.author;
   lines.textContent = `${commit.totalLines} lines edited`;
 }
