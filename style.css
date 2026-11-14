@@ -183,6 +183,19 @@ button {
   border-radius: 0.5rem;
 }
 
+.projects article .project-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.projects article .project-title-link:hover {
+  text-decoration: underline;
+}
+
+.projects article .project-image-link {
+  display: block;
+}
+
 .projects article h2 {
   margin: 0;
   padding: 0;

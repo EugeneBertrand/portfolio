@@ -24,6 +24,13 @@
     "description": "An expository visualization comparing food processing scores and price per calorie across Walmart, Target, and Whole Foods."
   },
   {
+    "title": "Bikewatching",
+    "year": 2026,
+    "image": "images/bikewatching.jpg",
+    "url": "https://eugenebertrand.github.io/lab7/",
+    "description": "An interactive Mapbox visualization of Bluebikes station traffic and bike lanes around Boston, with a time-of-day filter."
+  },
+  {
     "title": "DSC 106 Lab 1",
     "year": 2026,
     "image": "images/project-placeholder.svg",

@@ -120,14 +120,37 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     const article = document.createElement('article');
     const heading = document.createElement(safeHeadingLevel);
     heading.textContent = project.title || 'Untitled project';
-    article.append(heading);
+    const projectUrl = project.url ? new URL(project.url, location.href) : null;
+
+    if (projectUrl) {
+      const titleLink = document.createElement('a');
+      titleLink.className = 'project-title-link';
+      titleLink.href = projectUrl.href;
+      titleLink.target = '_blank';
+      titleLink.rel = 'noopener noreferrer';
+      titleLink.append(heading);
+      article.append(titleLink);
+    } else {
+      article.append(heading);
+    }
 
     if (project.image) {
       const image = document.createElement('img');
       image.src = new URL(project.image, new URL(BASE_PATH, location.origin));
       image.alt = `${project.title || 'Project'} preview`;
       image.loading = 'lazy';
-      article.append(image);
+
+      if (projectUrl) {
+        const imageLink = document.createElement('a');
+        imageLink.className = 'project-image-link';
+        imageLink.href = projectUrl.href;
+        imageLink.target = '_blank';
+        imageLink.rel = 'noopener noreferrer';
+        imageLink.append(image);
+        article.append(imageLink);
+      } else {
+        article.append(image);
+      }
     }
 
     const details = document.createElement('div');
