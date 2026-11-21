@@ -256,7 +256,7 @@ circle.entering {
 }
 
 @keyframes circle-enter {
-  from { r: 0; fill-opacity: 0; }
+  from { fill-opacity: 0; }
   to { fill-opacity: 0.7; }
 }
 

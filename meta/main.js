@@ -87,7 +87,7 @@ function renderScatterPlot(commitData) {
     .domain(d3.extent(commitData, (d) => d.datetime))
     .range([margin.left, width - margin.right]);
 
-  yScale = d3.scaleLinear().domain([0, 24]).range([height - margin.bottom, margin.top]);
+  yScale = d3.scaleLinear().domain([0, 24]).range([margin.top, height - margin.bottom]);
 
   svg.append('g')
     .attr('class', 'gridlines')
