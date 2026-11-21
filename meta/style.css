@@ -112,3 +112,138 @@ circle.selected {
     stroke-dashoffset: -8;
   }
 }
+
+.time-filter {
+  padding: 0.75rem 0;
+}
+
+.time-filter label {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.time-filter input {
+  flex: 1;
+  max-width: 36rem;
+}
+
+.time-filter time {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+}
+
+#scrolly-1 {
+  position: relative;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+#scrolly-1 > * {
+  flex: 1;
+  min-width: 0;
+}
+
+#scatter-story {
+  position: relative;
+}
+
+.step {
+  min-height: 55vh;
+  padding: 1.5rem 1rem 4rem;
+  margin-bottom: 25vh;
+  opacity: 0.42;
+  transition: opacity 300ms ease;
+}
+
+.step.is-active,
+.step:has(a:focus) {
+  opacity: 1;
+}
+
+#scatter-plot {
+  position: sticky;
+  top: 1rem;
+  height: 72vh;
+  overflow: hidden;
+}
+
+#scatter-plot h2 {
+  margin: 0 0 0.5rem;
+}
+
+#files {
+  display: grid;
+  grid-template-columns: minmax(9rem, 1fr) 4fr;
+  gap: 0.35rem 1rem;
+}
+
+#files > div {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  align-items: start;
+}
+
+#files dt {
+  grid-column: 1;
+  margin: 0;
+}
+
+#files dt.file-count {
+  grid-column: 1;
+}
+
+#files dt code {
+  font-weight: 700;
+}
+
+#files dt small {
+  display: block;
+  color: color-mix(in srgb, CanvasText 65%, Canvas);
+  font-size: 0.75rem;
+}
+
+#files dd {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  align-content: start;
+  gap: 0.15em;
+  padding-top: 0.6em;
+  margin-left: 0;
+}
+
+.loc {
+  display: block;
+  width: 0.5em;
+  aspect-ratio: 1;
+  background: var(--color, steelblue);
+  border-radius: 50%;
+}
+
+circle.entering {
+  animation: circle-enter 500ms ease-out;
+}
+
+@keyframes circle-enter {
+  from { r: 0; fill-opacity: 0; }
+  to { fill-opacity: 0.7; }
+}
+
+@media (max-width: 760px) {
+  #scrolly-1 {
+    display: block;
+  }
+
+  #scatter-plot {
+    top: 0;
+    height: 55vh;
+  }
+
+  .step {
+    min-height: 40vh;
+  }
+}
