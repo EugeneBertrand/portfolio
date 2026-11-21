@@ -1,8 +1,20 @@
-#stats,
 #language-breakdown {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
   gap: 0.75rem 1.25rem;
+}
+
+#stats dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 0.75rem 1.25rem;
+  margin: 0;
+}
+
+#stats dl > div {
+  display: grid;
+  align-content: start;
+  gap: 0.3rem;
 }
 
 #stats dt,
@@ -188,8 +200,10 @@ circle.selected {
 
 #files {
   display: grid;
-  grid-template-columns: minmax(9rem, 1fr) 4fr;
+  grid-template-columns: minmax(10rem, 1fr) 4fr;
   gap: 0.35rem 1rem;
+  margin: 0;
+  padding-block: 0.5rem;
 }
 
 #files > div {

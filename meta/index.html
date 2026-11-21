@@ -15,21 +15,22 @@
       <p>A scrollytelling view of the portfolio codebase over time.</p>
     </header>
 
-    <section>
-      <h2>Summary</h2>
-      <div id="stats" aria-live="polite"></div>
-    </section>
-
     <div class="time-filter">
       <label for="commit-progress">Show commits until:</label>
       <input type="range" id="commit-progress" min="0" max="100" value="100">
       <time id="commit-time"></time>
     </div>
 
+    <dl id="files" aria-label="Files by line count"></dl>
+
+    <section aria-label="Repository summary">
+      <div id="stats" aria-live="polite"></div>
+    </section>
+
     <section id="scrolly-1">
       <div id="scatter-story"></div>
       <div id="scatter-plot">
-        <h2>Commits over time</h2>
+        <h2>Commits by time of day</h2>
         <div id="chart" aria-label="Scatter plot of commit time by date"></div>
       </div>
     </section>
@@ -38,11 +39,6 @@
       <h2>Selected commits</h2>
       <p id="selection-count">No commits selected</p>
       <dl id="language-breakdown" class="stats"></dl>
-    </section>
-
-    <section>
-      <h2>Files by line count</h2>
-      <dl id="files"></dl>
     </section>
   </main>
 
@@ -59,6 +55,6 @@
     <dd id="commit-lines"></dd>
   </dl>
 
-  <script type="module" src="./main.js"></script>
+  <script type="module" src="./main.js?v=3"></script>
 </body>
 </html>

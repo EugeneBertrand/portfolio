@@ -51,31 +51,25 @@ function processCommits(data) {
 
 function renderCommitInfo(data, commitData) {
   const list = d3.select('#stats').append('dl');
-  const fileCount = d3.group(data, (d) => d.file).size;
-  const fileLengths = d3.rollups(data, (v) => d3.max(v, (d) => d.line), (d) => d.file);
-  const averageFileLength = d3.mean(fileLengths, (d) => d[1]);
+  const fileLines = d3.rollups(data, (v) => v.length, (d) => d.file);
+  const fileCount = fileLines.length;
+  const maxFileLines = d3.max(fileLines, (d) => d[1]);
   const maximumDepth = d3.max(data, (d) => d.depth);
-  const averageDepth = d3.mean(data, (d) => d.depth);
-  const workByPeriod = d3.rollups(
-    data,
-    (v) => v.length,
-    (d) => d.datetime.toLocaleString('en', { dayPeriod: 'short' }),
-  );
-  const mostActivePeriod = d3.greatest(workByPeriod, (d) => d[1])?.[0] ?? 'N/A';
+  const longestLine = d3.max(data, (d) => d.length);
 
   const entries = [
-    ['Total LOC', data.length],
-    ['Total commits', commitData.length],
+    ['Commits', commitData.length],
     ['Files', fileCount],
-    ['Avg file length', `${averageFileLength ? averageFileLength.toFixed(1) : 'N/A'} lines`],
+    ['Total LOC', data.length],
     ['Max depth', maximumDepth ?? 'N/A'],
-    ['Avg depth', `${averageDepth ? averageDepth.toFixed(2) : 'N/A'}`],
-    ['Most active period', mostActivePeriod],
+    ['Longest line', longestLine ?? 'N/A'],
+    ['Max lines', maxFileLines ?? 'N/A'],
   ];
 
   entries.forEach(([label, value]) => {
-    list.append('dt').text(label);
-    list.append('dd').text(value);
+    const entry = list.append('div');
+    entry.append('dt').text(label);
+    entry.append('dd').text(value);
   });
 }
 
