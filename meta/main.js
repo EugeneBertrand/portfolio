@@ -50,7 +50,6 @@ function processCommits(data) {
 }
 
 function renderCommitInfo(data, commitData) {
-  const list = d3.select('#stats').append('dl');
   const fileLines = d3.rollups(data, (v) => v.length, (d) => d.file);
   const fileCount = fileLines.length;
   const maxFileLines = d3.max(fileLines, (d) => d[1]);
@@ -66,11 +65,17 @@ function renderCommitInfo(data, commitData) {
     ['Max lines', maxFileLines ?? 'N/A'],
   ];
 
-  entries.forEach(([label, value]) => {
-    const entry = list.append('div');
-    entry.append('dt').text(label);
-    entry.append('dd').text(value);
-  });
+  const list = d3.select('#stats').selectAll('dl').data([null]).join('dl');
+  const metrics = list.selectAll('div').data(entries, ([label]) => label).join(
+    (enter) => {
+      const metric = enter.append('div');
+      metric.append('dt');
+      metric.append('dd');
+      return metric;
+    },
+  );
+  metrics.select('dt').text(([label]) => label);
+  metrics.select('dd').text(([, value]) => value);
 }
 
 function renderScatterPlot(commitData) {
@@ -276,6 +281,7 @@ function onTimeSliderChange() {
     timeStyle: 'short',
   });
   filteredCommits = commits.filter((d) => d.datetime <= commitMaxTime);
+  renderCommitInfo(filteredCommits.flatMap((d) => d.lines), filteredCommits);
   updateScatterPlot(filteredCommits);
   updateFileDisplay(filteredCommits);
   brushBehavior.move(d3.select('#chart svg'), null);
@@ -296,6 +302,7 @@ function onStepEnter(response) {
     timeStyle: 'short',
   });
   filteredCommits = commits.filter((d) => d.datetime <= commitMaxTime);
+  renderCommitInfo(filteredCommits.flatMap((d) => d.lines), filteredCommits);
   updateScatterPlot(filteredCommits);
   updateFileDisplay(filteredCommits);
 }
